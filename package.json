@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/CarlosChuma0/Tp2_PysW_Turismo#readme",
   "dependencies": {
+    "boostrap": "^2.0.0",
     "bootstrap": "^5.3.8",
     "jquery": "^4.0.0"
   }

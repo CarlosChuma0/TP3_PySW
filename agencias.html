@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Agencias</title>
@@ -8,8 +9,9 @@
     <!-- Bootstrap CSS -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    
+
 </head>
+
 <body>
     <!-- HEADER CON EL MENU -->
     <header>
@@ -58,91 +60,115 @@
             <span id="icon">🌙</span>
         </button>
     </header>
-    <main class="contenido-principal">
+    <main class="contenido-principal container my-5">
         <!-- AGENCIAS - TARJETAS FLIP Y ESTRELLAS: tarjetas con foto del asesor, datos al dorso y rating con estrellas animadas -->
         <section class="entrenadores">
             <h2>AGENCIAS ASOCIADAS</h2>
-            <div class="contenedor-tarjetas">
-                <div class="tarjeta-girar">
-                    <div class="tarjeta-entrenador">
-                        <div class="cara cara-frontal">
-                            <img src="https://images.pexels.com/photos/6077664/pexels-photo-6077664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Asesor Lucas Ramirez">
-                            <h3>Lucas Ramirez</h3>
-                            <p>Especialidad: Europa y circuitos culturales</p>
-                            <p>"Cada ciudad cuenta una historia; nosotros te llevamos a escucharla."</p>
-                        </div>
-                        <div class="cara cara-trasera">
-                            <h3>Lucas Ramirez</h3>
-                            <p>Experiencia: 8 años en turismo receptivo y emisivo</p>
-                            <p>Certificaciones: IATA / Gestión de viajes corporativos</p>
-                            <div class="rating">
-                                <div class="estrellas">
-                                    <div class="grises">★★★★★</div>
-                                    <div class="doradas" style="--rating: 4">★★★★★</div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="tarjeta-girar w-100 mx-auto">
+                        <div class="tarjeta-entrenador">
+                            <div class="cara cara-frontal">
+                                <img src="https://images.pexels.com/photos/6077664/pexels-photo-6077664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                    alt="Asesor Lucas Ramirez">
+                                <h3>Lucas Ramirez</h3>
+                                <p>Especialidad: Europa y circuitos culturales</p>
+                                <p>"Cada ciudad cuenta una historia; nosotros te llevamos a escucharla."</p>
+                            </div>
+                            <div class="cara cara-trasera">
+                                <h3>Lucas Ramirez</h3>
+                                <div class="rating">
+                                    <div class="rating-interactivo" data-rating="4">
+                                        <span class="star" data-value="1">★</span>
+                                        <span class="star" data-value="2">★</span>
+                                        <span class="star" data-value="3">★</span>
+                                        <span class="star" data-value="4">★</span>
+                                        <span class="star" data-value="5">★</span>
+                                    </div>
                                 </div>
+                                <p>Experiencia: 8 años en turismo receptivo y emisivo</p>
+                                <p>Certificaciones: IATA / Gestión de viajes corporativos</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tarjeta-girar">
-                    <div class="tarjeta-entrenador">
-                        <div class="cara cara-frontal">
-                            <img src="https://images.pexels.com/photos/8145333/pexels-photo-8145333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Asesora Valentina Rios">
-                            <h3>Valentina Rios</h3>
-                            <p>Especialidad: Escapadas relax y bienestar</p>
-                            <p>"Viajar tambien es encontrar tiempo para vos."</p>
-                        </div>
-                        <div class="cara cara-trasera">
-                            <h3>Valentina Rios</h3>
-                            <p>Experiencia: 6 años en hoteles boutique y spa</p>
-                            <p>Certificaciones: Turismo sustentable y experiencias premium</p>
-                            <div class="rating">
-                                <div class="estrellas">
-                                    <div class="grises">★★★★★</div>
-                                    <div class="doradas" style="--rating: 5">★★★★★</div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="tarjeta-girar w-100 mx-auto">
+                        <div class="tarjeta-entrenador">
+                            <div class="cara cara-frontal">
+                                <img src="https://images.pexels.com/photos/8145333/pexels-photo-8145333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                    alt="Asesora Valentina Rios">
+                                <h3>Valentina Rios</h3>
+                                <p>Especialidad: Escapadas relax y bienestar</p>
+                                <p>"Viajar tambien es encontrar tiempo para vos."</p>
+                            </div>
+                            <div class="cara cara-trasera">
+                                <h3>Valentina Rios</h3>
+                                <div class="rating">
+                                    <div class="rating-interactivo" data-rating="5">
+                                        <span class="star" data-value="1">★</span>
+                                        <span class="star" data-value="2">★</span>
+                                        <span class="star" data-value="3">★</span>
+                                        <span class="star" data-value="4">★</span>
+                                        <span class="star" data-value="5">★</span>
+                                    </div>
                                 </div>
+                                <p>Experiencia: 6 años en hoteles boutique y spa</p>
+                                <p>Certificaciones: Turismo sustentable y experiencias premium</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tarjeta-girar">
-                    <div class="tarjeta-entrenador">
-                        <div class="cara cara-frontal">
-                            <img src="https://images.pexels.com/photos/8382244/pexels-photo-8382244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Asesor Matias Herrera">
-                            <h3>Matias Herrera</h3>
-                            <p>Especialidad: Trekking, aventura y naturaleza</p>
-                            <p>"El mejor souvenir es un buen mapa y buenos recuerdos."</p>
-                        </div>
-                        <div class="cara cara-trasera">
-                            <h3>Matias Herrera</h3>
-                            <p>Experiencia: 7 años coordinando salidas de montaña</p>
-                            <p>Certificaciones: Primeros auxilios en zona remota</p>
-                            <div class="rating">
-                                <div class="estrellas">
-                                    <div class="grises">★★★★★</div>
-                                    <div class="doradas" style="--rating: 4">★★★★★</div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="tarjeta-girar w-100 mx-auto">
+                        <div class="tarjeta-entrenador">
+                            <div class="cara cara-frontal">
+                                <img src="https://images.pexels.com/photos/8382244/pexels-photo-8382244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                    alt="Asesor Matias Herrera">
+                                <h3>Matias Herrera</h3>
+                                <p>Especialidad: Trekking, aventura y naturaleza</p>
+                                <p>"El mejor souvenir es un buen mapa y buenos recuerdos."</p>
+                            </div>
+                            <div class="cara cara-trasera">
+                                <h3>Matias Herrera</h3>
+                                <div class="rating">
+                                    <div class="rating-interactivo" data-rating="4">
+                                        <span class="star" data-value="1">★</span>
+                                        <span class="star" data-value="2">★</span>
+                                        <span class="star" data-value="3">★</span>
+                                        <span class="star" data-value="4">★</span>
+                                        <span class="star" data-value="5">★</span>
+                                    </div>
                                 </div>
+                                <p>Experiencia: 7 años coordinando salidas de montaña</p>
+                                <p>Certificaciones: Primeros auxilios en zona remota</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tarjeta-girar">
-                    <div class="tarjeta-entrenador">
-                        <div class="cara cara-frontal">
-                            <img src="https://images.pexels.com/photos/7693227/pexels-photo-7693227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Asesora Florencia Silva">
-                            <h3>Florencia Silva</h3>
-                            <p>Especialidad: Playa, cruceros y Caribe</p>
-                            <p>"El mar pone todo en perspectiva."</p>
-                        </div>
-                        <div class="cara cara-trasera">
-                            <h3>Florencia Silva</h3>
-                            <p>Experiencia: 5 años en cruceros y paquetes todo incluido</p>
-                            <p>Certificaciones: Especialista en destinos costeros CLIA</p>
-                            <div class="rating">
-                                <div class="estrellas">
-                                    <div class="grises">★★★★★</div>
-                                    <div class="doradas" style="--rating: 5">★★★★★</div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="tarjeta-girar w-100 mx-auto">
+                        <div class="tarjeta-entrenador">
+                            <div class="cara cara-frontal">
+                                <img src="https://images.pexels.com/photos/7693227/pexels-photo-7693227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                    alt="Asesora Florencia Silva">
+                                <h3>Florencia Silva</h3>
+                                <p>Especialidad: Playa, cruceros y Caribe</p>
+                                <p>"El mar pone todo en perspectiva."</p>
+                            </div>
+                            <div class="cara cara-trasera">
+                                <h3>Florencia Silva</h3>
+                                <div class="rating">
+                                    <div class="rating-interactivo" data-rating="5">
+                                        <span class="star" data-value="1">★</span>
+                                        <span class="star" data-value="2">★</span>
+                                        <span class="star" data-value="3">★</span>
+                                        <span class="star" data-value="4">★</span>
+                                        <span class="star" data-value="5">★</span>
+                                    </div>
                                 </div>
+                                <p>Experiencia: 5 años en cruceros y paquetes todo incluido</p>
+                                <p>Certificaciones: Especialista en destinos costeros CLIA</p>
                             </div>
                         </div>
                     </div>
@@ -211,4 +237,5 @@
     </script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
