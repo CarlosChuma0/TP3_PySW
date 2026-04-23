@@ -1,0 +1,24 @@
+{
+  "name": "tp03_pysw_turismo",
+  "version": "1.0.0",
+  "description": "Sitio ficticio para una operadora o agencia de viajes, desarrollado con **HTML** y **CSS**, y **JavaScript** mínimo (modo oscuro y scroll reveal en el blog). El enunciado del **TP 2026 (turismo)** no pide la barra de habilidades animada de ejemplos anteriores; este proyecto mantiene además el **toggle mensual / semestral / anual** de precios solo con CSS (como en el TP de gimnasio), por si lo pedís en otra instancia o querés mostrar esa técnica.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosChuma0/Tp2_PysW_Turismo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlosChuma0/Tp2_PysW_Turismo/issues"
+  },
+  "homepage": "https://github.com/CarlosChuma0/Tp2_PysW_Turismo#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "jquery": "^4.0.0"
+  }
+}

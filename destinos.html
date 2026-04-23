@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destinos</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER CON EL MENU -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container">
+
+                <a class="navbar-brand" href="index.html">Turismo</a>
+
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú -->
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                Servicios
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="destinos.html">Destinos</a></li>
+                                <li><a class="dropdown-item" href="agencias.html">Agencias</a></li>
+                                <li><a class="dropdown-item" href="precios.html">Precios</a></li>
+                                <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="formulario.html">Contacto</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+        <button id="darkModeToggle" aria-label="Toggle dark mode">
+            <span id="icon">🌙</span>
+        </button>
+    </header>
+    <main class="contenido-principal">
+        <!-- FILTRADO DE DESTINOS -->
+        <section class="filtro-clases">
+            <h2 class ="text-center mb-4">DESTINOS TURÍSTICOS</h2>
+            <div class="container text-center my-4">
+                <button class="btn btn-primary filtro" data-filtro="all">Todos</button>
+                <button class="btn btn-outline-primary filtro" data-filtro="patrimonio">Patrimonio</button>
+                <button class="btn btn-outline-primary filtro" data-filtro="naturaleza">Naturaleza</button>
+                <button class="btn btn-outline-primary filtro" data-filtro="aventura">Aventura</button>
+                <button class="btn btn-outline-primary filtro" data-filtro="playa">Playa</button>
+            </div>
+
+
+            <!-- TARJETAS DE DESTINOS: tarjetas informativas sin imagenes -->
+            <div class="container my-5">
+                <div class="row g-4 justify-content-center">
+                    <!-- PATRIMONIO -->
+                    <div class="col-12 col-md-6 col-lg-4 destino-item patrimonio">
+                        <div class="tarjeta h-100 position-relative">
+                            <div class="contenido">
+                                <h3>Circuito Europa clasica</h3>
+                                <p>Roma, Florencia, Venecia</p>
+                                <p>Museos y monumentos UNESCO</p>
+                                <p>Guias locales en español</p>
+                                <h5>Patrimonio</h5>
+                            </div>
+                            <div class="overlay">
+                                <a href="#" class="boton-overlay">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 destino-item patrimonio">
+                        <div class="tarjeta h-100 position-relative">
+                            <div class="contenido">
+                                <h3>Imperios del Peru</h3>
+                                <p>Cusco y Valle Sagrado</p>
+                                <p>Machu Picchu</p>
+                                <p>Cultura viva andina</p>
+                                <h5>Patrimonio</h5>
+                            </div>
+                            <div class="overlay">
+                                <a href="#" class="boton-overlay">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- NATURALEZA -->
+                    <div class="col-12 col-md-6 col-lg-4 destino-item naturaleza">
+                        <div class="tarjeta h-100 position-relative">
+                            <div class="contenido">
+                                <h3>Patagonia austral</h3>
+                                <p>Glaciares y lagos</p>
+                                <p>Avistaje de fauna</p>
+                                <p>Senderos guiados</p>
+                                <h5>Naturaleza</h5>
+                            </div>
+                            <div class="overlay">
+                                <a href="#" class="boton-overlay">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 destino-item naturaleza">
+                        <div class="tarjeta h-100 position-relative">
+                            <div class="contenido">
+                                <h3>Noroeste argentino</h3>
+                                <p>Quebrada de Humahuaca</p>
+                                <p>Salinas Grandes</p>
+                                <p>Pueblos coloniales</p>
+                                <h5>Naturaleza</h5>
+                            </div>
+                            <div class="overlay">
+                                <a href="#" class="boton-overlay">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- AVENTURA -->
+                    <div class="col-12 col-md-6 col-lg-4 destino-item aventura">
+                        <div class="tarjeta h-100 position-relative">
+                            <div class="contenido">
+                                <h3>Trekking de altura</h3>
+                                <p>Base camp y ascensos ligeros</p>
+                                <p>Equipo incluido</p>
+                                <p>Grupos reducidos</p>
+                                <h5>Aventura</h5>
+                            </div>
+                            <div class="overlay">
+                                <a href="#" class="boton-overlay">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 destino-item aventura">
+                        <div class="tarjeta h-100 position-relative">
+                            <div class="contenido">
+                                <h3>Rafting y canopy</h3>
+                                <p>Rios clase II-III</p>
+                                <p>Seguridad certificada</p>
+                                <p>Opcion familia</p>
+                                <h5>Aventura</h5>
+                            </div>
+                            <div class="overlay">
+                                <a href="#" class="boton-overlay">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PLAYA -->
+                    <div class="col-12 col-md-6 col-lg-4 destino-item playa">
+                        <div class="tarjeta h-100 position-relative">
+                            <div class="contenido">
+                                <h3>Caribe todo incluido</h3>
+                                <p>Resort frente al mar</p>
+                                <p>Traslados aeropuerto-hotel</p>
+                                <p>Actividades acuaticas</p>
+                                <h5>Playa</h5>
+                            </div>
+                            <div class="overlay">
+                                <a href="#" class="boton-overlay">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 destino-item playa">
+                        <div class="tarjeta h-100 position-relative">
+                            <div class="contenido">
+                                <h3>Costa y relax</h3>
+                                <p>Playas tranquilas</p>
+                                <p>Spa y gastronomia</p>
+                                <p>Salidas cortas</p>
+                                <h5>Playa</h5>
+                            </div>
+                            <div class="overlay">
+                                <a href="#" class="boton-overlay">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- GALERIA MASONRY -->
+        <section class="galeria-masonry container my-5" id="galeria-masonry">
+            <h2 class="text-center mb-4">GALERIA DE VIAJES</h2>
+            <div class="contenedor-masonry">
+                <a href="#foto1"><img src="https://images.pexels.com/photos/32947647/pexels-photo-32947647.jpeg"
+                        alt="Foto 1" style="height: 250px;">
+                </a>
+
+                <a href="#foto2"><img src="https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg"
+                        alt="Foto 2" style="height: 300px;">
+                </a>
+                <a href="#foto3"><img src="https://images.pexels.com/photos/4062592/pexels-photo-4062592.jpeg"
+                        alt="Foto 3" style="height: 250px;">
+                </a>
+                <a href="#foto4"><img src="https://images.pexels.com/photos/30016675/pexels-photo-30016675.jpeg"
+                        alt="Foto 4" style="height: 200px;">
+                </a>
+                <a href="#foto5"><img src="https://images.pexels.com/photos/19455704/pexels-photo-19455704.jpeg"
+                        alt="Foto 5" style="height: 350px;">
+                </a>
+                <a href="#foto6"><img src="https://images.pexels.com/photos/17160692/pexels-photo-17160692.jpeg"
+                        alt="Foto 6" style="height: 250px;">
+                </a>
+                <a href="#foto7"><img src="https://images.pexels.com/photos/17489392/pexels-photo-17489392.jpeg"
+                        alt="Foto 7" style="height: 400px;">
+                </a>
+                <a href="#foto8"><img src="https://images.pexels.com/photos/21959611/pexels-photo-21959611.jpeg"
+                        alt="Foto 8" style="height: 200px;">
+                </a>
+                <a href="#foto9"><img src="https://images.pexels.com/photos/4307736/pexels-photo-4307736.jpeg"
+                        alt="Foto 9" style="height: 200px;">
+                </a>
+                <a href="#foto10"><img
+                        src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                        alt="Foto 10" style="height: 300px;">
+                </a>
+                <a href="#foto11"><img src="https://images.pexels.com/photos/28961382/pexels-photo-28961382.jpeg"
+                        alt="Foto 11" style="height: 150px;">
+                </a>
+                <a href="#foto12"><img src="https://images.pexels.com/photos/28978666/pexels-photo-28978666.jpeg"
+                        alt="Foto 12" style="height: 350px;">
+                </a>
+            </div>
+            <!-- Esto es para que al hacer click se muestre la imagen a su tamaño real -->
+            <a href="#galeria-masonry" class="lightbox" id="foto1"><img
+                    src="https://images.pexels.com/photos/32947647/pexels-photo-32947647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 1"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto2"><img
+                    src="https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 2"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto3"><img
+                    src="https://images.pexels.com/photos/4062592/pexels-photo-4062592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 3"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto4"><img
+                    src="https://images.pexels.com/photos/30016675/pexels-photo-30016675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 4"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto5"><img
+                    src="https://images.pexels.com/photos/19455704/pexels-photo-19455704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 5"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto6"><img
+                    src="https://images.pexels.com/photos/17160692/pexels-photo-17160692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 6"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto7"><img
+                    src="https://images.pexels.com/photos/17489392/pexels-photo-17489392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 7"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto8"><img
+                    src="https://images.pexels.com/photos/21959611/pexels-photo-21959611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 8"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto9"><img
+                    src="https://images.pexels.com/photos/4307736/pexels-photo-4307736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 9"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto10"><img
+                    src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                    alt="Foto 10"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto11"><img
+                    src="https://images.pexels.com/photos/28961382/pexels-photo-28961382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 11"></a>
+            <a href="#galeria-masonry" class="lightbox" id="foto12"><img
+                    src="https://images.pexels.com/photos/28978666/pexels-photo-28978666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Foto 12"></a>
+        </section>
+        <!-- TABLA DE DESTINOS -->
+        <section class="container my-5">
+            <h2 class ="text-center mb-4">Destinos destacados</h2>
+            <div class="table-responsive">
+                <table class = "table table-stripped table-hover table-bordered text-center align-middle">
+                    <thead>
+                        <tr>
+                            <th>Destino</th>
+                            <th>Categoría</th>
+                            <th>Duración</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Destino">Salinas Grandes</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Duración">1 día</td>
+                            <td data-label="Precio">$15.000</td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Destino">Tilcara</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Duración">2 días</td>
+                            <td data-label="Precio">$25.000</td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Destino">Purmamarca</td>
+                            <td data-label="Categoría">Religioso</td>
+                            <td data-label="Duración">1 día</td>
+                            <td data-label="Precio">$18.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row g-4">
+
+                <!-- NEWSLETTER -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="newsletter">
+                        <h3>Suscribete al Newsletter!</h3>
+                        <form>
+                            <input type="email" class="form-control mb-2" placeholder="Ingresa tu correo" required>
+                            <button type="submit" class="btn btn-primary w-100">Suscribirse</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- REDES -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="redes">
+                        <h3>Seguinos</h3>
+                        <div class="d-flex flex-column gap-2">
+                            <a href="#" class="text-white"><i class="bi bi-facebook"></i> Facebook</a>
+                            <a href="#" class="text-white"><i class="bi bi-instagram"></i> Instagram</a>
+                            <a href="#" class="text-white"><i class="bi bi-youtube"></i> YouTube</a>
+                            <a href="#" class="text-white"><i class="bi bi-x"></i> X</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAPA -->
+                <div class="col-12 col-lg-4">
+                    <div class="mapa">
+                        <h3>Donde estamos</h3>
+                        <iframe src="https://www.google.com/maps/embed?..." class="w-100" height="200" style="border:0;"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const icon = document.getElementById('icon');
+
+        if (localStorage.getItem('dark-mode') === 'true') {
+            document.body.classList.add('dark-mode');
+            icon.textContent = '☀️';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const dark = document.body.classList.contains('dark-mode');
+            icon.textContent = dark ? '☀️' : '🌙';
+            localStorage.setItem('dark-mode', dark);
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
