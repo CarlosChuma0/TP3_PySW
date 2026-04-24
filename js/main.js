@@ -187,45 +187,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //BLOG
-$(document).ready(function(){
+$(document).ready(function() {
 
-    $(".filter-btn").click(function(){
-
+    $(".filter-btn").click(function() {
         const category = $(this).data("category");
 
-        // cambiar estado activo (Bootstrap)
         $(".filter-btn").removeClass("active");
         $(this).addClass("active");
 
-        // filtro
-        if(category === "all"){
-            $(".post").fadeIn(250).addClass("visible");
-        } else {
-            $(".post").each(function(){
-                const $post = $(this);
+        $(".post").each(function() {
+            const $post = $(this);
 
-                if($post.hasClass(category)){
-                    $post.fadeIn(250).addClass("visible");
-                } else {
-                    $post.fadeOut(150).removeClass("visible");
-                }
-            });
-        }
+            if (category === "all" || $post.hasClass(category)) {
+                $post.removeClass("hidden");
+                
+                setTimeout(() => {
+                    $post.addClass("visible");
+                }, 20);
+            } else {
+                $post.removeClass("visible").addClass("hidden");
+            }
+        });
     });
 
     const posts = document.querySelectorAll('.post');
 
+    const observerOptions = {
+        threshold: 0.2 
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !entry.target.classList.contains('hidden')) {
                 entry.target.classList.add('visible');
-            } else {
+            } else if (!entry.isIntersecting) {
                 entry.target.classList.remove('visible');
             }
         });
-    }, {
-        threshold: 0.4
-    });
+    }, observerOptions);
 
     posts.forEach(post => observer.observe(post));
 });
