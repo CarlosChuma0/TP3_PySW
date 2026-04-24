@@ -86,7 +86,7 @@
                         </button>
                     </li>
                 </ul>         
-                <div class="row g-4">
+                <div class="row g-4 justify-content-start">
                     <div class="col-lg-6">
                         <article class="card h-100 shadow-sm post destinos bg-light blog-card">
                             <div class="card-body d-flex flex-column">
@@ -120,7 +120,7 @@
                         </article>
                     </div>                    
                     <div class="col-md-6 col-lg-4">
-                        <article class="card h-100 shadow-sm post destinos bg-light blog-card">
+                        <article class="card h-100 shadow-sm post consejos bg-light blog-card">
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title fs-6">5 errores al armar la valija y como evitarlos</h3>
                                 <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/30981181/pexels-photo-30981181.jpeg" class="card-img-top object-fit-cover" alt="Valija"></div>                                
@@ -140,7 +140,7 @@
                         </article>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <article class="card h-100 shadow-sm post consejos bg-light blog-card">
+                        <article class="card h-100 shadow-sm post destinos bg-light blog-card">
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title fs-6">Dormir bien lejos de casa</h3>
                                 <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/16901228/pexels-photo-16901228.jpeg" class="card-img-top object-fit-cover" alt="Hotel"></div>                                            
@@ -170,7 +170,7 @@
                         </article>
                     </div>
                     <div class="col-lg-6">
-                        <article class="card h-100 shadow-sm post consejos bg-light blog-card">
+                        <article class="card h-100 shadow-sm post destinos bg-light blog-card">
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title fs-6">Destinos imperdibles para tu próximo viaje</h3>
                                 <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/6814770/pexels-photo-6814770.jpeg" class="card-img-top object-fit-cover" alt="Turismo"></div>                                                                            
@@ -320,24 +320,6 @@
         });
     </script>
     <script src="js/main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const posts = document.querySelectorAll('.post');
-        
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    } else {
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            }, {
-                threshold: 0.4
-            });
-        
-            posts.forEach(post => observer.observe(post));
-        });
-    </script>
+    
 </body>
 </html>

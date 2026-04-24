@@ -186,45 +186,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-//BLOG
-$(document).ready(function() {
+// BLOG
+$(document).ready(function () {
 
-    $(".filter-btn").click(function() {
+    $(".filter-btn").click(function () {
+
         const category = $(this).data("category");
 
         $(".filter-btn").removeClass("active");
         $(this).addClass("active");
 
-        $(".post").each(function() {
+        $(".post").each(function () {
+
             const $post = $(this);
+            const $col = $post.closest('[class*="col-"]');
 
             if (category === "all" || $post.hasClass(category)) {
-                $post.removeClass("hidden");
-                
-                setTimeout(() => {
+
+                $col.removeClass("d-none");
+
+                $post.removeClass("visible");
+
+                requestAnimationFrame(() => {
                     $post.addClass("visible");
-                }, 20);
+                });
+
             } else {
-                $post.removeClass("visible").addClass("hidden");
+
+                $post.removeClass("visible");
+                $col.addClass("d-none");
+
             }
         });
     });
 
     const posts = document.querySelectorAll('.post');
 
-    const observerOptions = {
-        threshold: 0.2 
-    };
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && !entry.target.classList.contains('hidden')) {
+
+            if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-            } else if (!entry.isIntersecting) {
+            } else {
                 entry.target.classList.remove('visible');
             }
+
         });
-    }, observerOptions);
+    }, {
+        threshold: 0.2
+    });
 
     posts.forEach(post => observer.observe(post));
+
 });
