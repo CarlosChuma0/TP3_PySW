@@ -56,69 +56,199 @@
             </div>
         </nav>
         <button id="darkModeToggle" aria-label="Toggle dark mode">
-            <span id="icon">🌙</span>
+            <span id="icon" class="sprite icon-moon"></span>
         </button>
     </header>
     <main class="contenido-principal">
         <!-- BLOG-->
-        <section class="blog">
-            <h2>BLOG POR Y PARA VIAJEROS</h2>
-            <!-- FILTRADO: mismas categorias con css-->
-            <input type="radio" name="filtro" id="todos" checked hidden>
-            <input type="radio" name="filtro" id="nutricion" hidden>
-            <input type="radio" name="filtro" id="entrenamiento" hidden>
-            <input type="radio" name="filtro" id="bienestar" hidden>
-            <div class="tags">
-                <label for="todos">Todos</label>
-                <label for="nutricion">Gastronomia</label>
-                <label for="entrenamiento">Destinos</label>
-                <label for="bienestar">Consejos</label>
-            </div>
-            <!-- ARTICULOS DEL BLOG: posts, pueden agregarse mas luego -->
-            <div class="articulos">
-                <article class="post nutricion">
-                    <h3>Platos imperdibles antes de un tour largo</h3>
-                    <p>Que comer para llegar con energia a cada parada del circuito.</p>
-                </article>
-                <article class="post nutricion">
-                    <h3>Hidratacion en altura y en climas calurosos</h3>
-                    <p>Consejos para viajar seguro sin perder rendimiento.</p>
-                </article>
-                <article class="post entrenamiento">
-                    <h3>Como elegir tu primer viaje internacional</h3>
-                    <p>Documentacion, seguros y errores que conviene evitar.</p>
-                </article>
-                <article class="post entrenamiento">
-                    <h3>5 errores al armar la valija y como evitarlos</h3>
-                    <p>Menos peso, mas comodidad y todo lo esencial a mano.</p>
-                </article>
-                <article class="post bienestar">
-                    <h3>Respirar mejor en aeropuertos y vuelos largos</h3>
-                    <p>Tecnicas simples para bajar el estres antes de despegar.</p>
-                </article>
-                <article class="post bienestar">
-                    <h3>Dormir bien lejos de casa</h3>
-                    <p>El descanso tambien es parte de un buen viaje.</p>
-                </article>
-            </div>
-            <!-- COMENTARIOS -->
-            <div class="comentarios">
-                <h3>COMENTARIOS</h3>
-                <div class="comentario">
-                    <div class="avatar"></div>
-                    <p><strong>Usuario anonimo: </strong>Una guia muy util, gracias!</p>
+        <section class="blog py-5">
+            <div class="container">
+                <h2 class="text-center mb-4 fs-4">BLOG DE VIAJES Y EXPERIENCIAS</h2>
+                <ul class="nav nav-pills justify-content-center gap-2 mb-4 pb-3">
+                    <li class="nav-item">
+                        <button class="nav-link filter-btn active px-3 py-2 rounded-pill fw-semibold" data-category="all">
+                            Todos
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link filter-btn px-3 py-2 rounded-pill fw-semibold" data-category="gastronomia">
+                            Gastronomía
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link filter-btn px-3 py-2 rounded-pill fw-semibold" data-category="destinos">
+                            Destinos
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link filter-btn px-3 py-2 rounded-pill fw-semibold" data-category="consejos">
+                            Consejos
+                        </button>
+                    </li>
+                </ul>         
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <article class="card h-100 shadow-sm post destinos bg-light blog-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title fs-6">Como elegir tu primer viaje internacional</h3>                                
+                                <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/36756194/pexels-photo-36756194.jpeg" class="card-img-top object-fit-cover" alt="Avión"></div>                                                                
+                                <p class="card-text mt-3 small">Planificar tu primer viaje internacional. Es importante revisar documentación como pasaporte, visados y requisitos del destino. También contar con un seguro de viaje adecuado ayuda a evitar problemas inesperados. Una buena preparación te permitirá viajar con más tranquilidad y disfrutar mejor la experiencia.</p>
+                                <a href="#" class="btn btn-primary btn-sm mt-auto align-self-start">Ver nota</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-3">
+                        <article class="card h-100 shadow-sm post gastronomia featured bg-light blog-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title fs-6">Platos imperdibles antes de un tour largo</h3>
+                                <div class="ratio ratio-21x9 overflow-hidden rounded shadow">
+                                    <img src="https://images.pexels.com/photos/31822994/pexels-photo-31822994.jpeg" class="card-img-top object-fit-cover" alt="Plato">
+                                </div>
+                                <p class="card-text mt-3 small">Qué comer para llegar con energía suficiente a cada parada del circuito, mantener un buen rendimiento durante todo el recorrido y evitar el cansancio en trayectos largos.</p>
+                                <a href="#" class="btn btn-primary btn-sm mt-auto align-self-start">Ver nota</a>                                
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-3">
+                        <article class="card h-100 shadow-sm post gastronomia bg-light blog-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title fs-6">Hidratacion en altura y en climas calurosos</h3>
+                                <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/30762203/pexels-photo-30762203.jpeg" class="card-img-top object-fit-cover" alt="Hidratación"></div>
+                                <p class="card-text mt-3 small">Mantener una buena hidratación en altura y en climas calurosos es clave para evitar el cansancio, prevenir el malestar y sostener el rendimiento durante todo el viaje.</p>
+                                <a href="#" class="btn btn-primary btn-sm mt-auto align-self-start">Ver nota</a>
+                            </div>
+                        </article>
+                    </div>                    
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm post destinos bg-light blog-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title fs-6">5 errores al armar la valija y como evitarlos</h3>
+                                <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/30981181/pexels-photo-30981181.jpeg" class="card-img-top object-fit-cover" alt="Valija"></div>                                
+                                <p class="card-text mt-3 small">Llevar solo lo necesario en la valija te permite viajar con menos peso, mayor comodidad y tener siempre a mano lo esencial durante todo el recorrido.</p>
+                                <a href="#" class="btn btn-primary btn-sm mt-auto align-self-start">Ver nota</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm post consejos bg-light blog-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title fs-6">Respirar mejor en aeropuertos y vuelos largos</h3>
+                                <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/16108909/pexels-photo-16108909.jpeg" class="card-img-top object-fit-cover" alt="Viaje"></div>                                            
+                                <p class="card-text mt-3 small">Técnicas simples y efectivas para reducir el estrés antes de despegar y mantener la calma durante el vuelo.</p>
+                                <a href="#" class="btn btn-primary btn-sm mt-auto align-self-start">Ver nota</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card h-100 shadow-sm post consejos bg-light blog-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title fs-6">Dormir bien lejos de casa</h3>
+                                <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/16901228/pexels-photo-16901228.jpeg" class="card-img-top object-fit-cover" alt="Hotel"></div>                                            
+                                <p class="card-text mt-3 small">El descanso también es una parte clave para disfrutar de un buen viaje, especialmente cuando eliges bien el hotel, ya que un buen alojamiento te ayuda a recuperar energías y aprovechar mejor cada día del recorrido.</p>
+                                <a href="#" class="btn btn-primary btn-sm mt-auto align-self-start">Ver nota</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-3">
+                        <article class="card h-100 shadow-sm post consejos bg-light blog-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title fs-6">Seguridad en destinos desconocidos</h3>
+                                <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/7734672/pexels-photo-7734672.jpeg" class="card-img-top object-fit-cover" alt="Seguridad"></div>                                                                            
+                                <p class="card-text mt-3 small">Medidas básicas para viajar con mayor tranquilidad y protegerte en destinos desconocidos, como informarte sobre la zona, cuidar tus pertenencias y mantener hábitos de seguridad durante todo el recorrido.</p>
+                                <a href="#" class="btn btn-primary btn-sm mt-auto align-self-start">Ver nota</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-3">
+                        <article class="card h-100 shadow-sm post consejos bg-light blog-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title fs-6">Como ahorrar dinero en tus viajes</h3>
+                                <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/346820/pexels-photo-346820.jpeg" class="card-img-top object-fit-cover" alt="Guía"></div>                                                                            
+                                <p class="card-text mt-3 small">Estrategias prácticas para ahorrar dinero en tus viajes, desde elegir bien los vuelos y alojamientos hasta aprovechar descuentos, transporte local y actividades gratuitas sin perder calidad en la experiencia.</p>
+                                <a href="#" class="btn btn-primary btn-sm mt-auto align-self-start">Ver nota</a>
+                            </div>                                
+                        </article>
+                    </div>
+                    <div class="col-lg-6">
+                        <article class="card h-100 shadow-sm post consejos bg-light blog-card">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title fs-6">Destinos imperdibles para tu próximo viaje</h3>
+                                <div class="ratio ratio-21x9 overflow-hidden rounded shadow"> <img src="https://images.pexels.com/photos/6814770/pexels-photo-6814770.jpeg" class="card-img-top object-fit-cover" alt="Turismo"></div>                                                                            
+                                <p class="card-text mt-3 small">Descubrí destinos imperdibles para tu próximo viaje con lugares recomendados, paisajes únicos y experiencias inolvidables. Cada destino ofrece opciones para todos los gustos, desde aventura hasta relax, junto con imágenes que inspiran a planificar tu próxima escapada y vivir nuevas experiencias alrededor del mundo.</p>
+                                <a href="#" class="btn btn-primary btn-sm mt-auto align-self-start">Ver nota</a>
+                            </div>                                
+                        </article>
+                    </div>
                 </div>
-                <div class="comentario">
-                    <div class="avatar"></div>
-                    <p><strong>Usuario anonimo: </strong>Muy buenos tips de destinos</p>
-                </div>
-                <div class="comentario">
-                    <div class="avatar"></div>
-                    <p><strong>Usuario anonimo: </strong>Los consejos de gastronomia me sirvieron un monton</p>
-                </div>
-                <div class="comentario">
-                    <div class="avatar"></div>
-                    <p><strong>Usuario anonimo: </strong>Espero que suban mas recetas y tips de bienestar</p>
+
+                <div class="mt-5">
+                    <h3 class="mb-3 fs-4">COMENTARIOS</h3>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="p-2 rounded shadow-sm d-flex align-items-start border bg-light post comment-card">
+                            <span id="icon" class="sprite icon-us me-2 flex-shrink-0"></span>
+                            <div>
+                                <div class="fw-bold">Juan Pérez</div>
+                                <div class="text-muted small mb-1 comment-time">Hace 11 minutos</div>
+                                <p class="mb-0 small">Guía muy útil, ¡gracias! Me ayudó muchísimo a organizar mi recorrido y a aprovechar mejor cada lugar que visité. Las recomendaciones fueron claras y prácticas, lo que hizo que la experiencia turística fuera mucho más fluida y enriquecedora.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 rounded shadow-sm d-flex align-items-start border bg-light post comment-card">
+                                <span id="icon" class="sprite icon-us me-2 flex-shrink-0"></span>
+                            <div>
+                                <div class="fw-bold">María González</div>
+                                <div class="text-muted small mb-1">Hace 18 minutos</div>
+                                <p class="mb-0 small">Muy buenos tips de destinos.</p>
+                            </div>
+                        </div>     
+                        <div class="p-2 rounded shadow-sm d-flex align-items-start border bg-light post comment-card">
+                            <span id="icon" class="sprite icon-us me-2 flex-shrink-0"></span>
+                            <div>
+                                <div class="fw-bold">Usuario anonimo</div>
+                                <div class="text-muted small mb-1">Hace 46 minutos</div>
+                                <p class="mb-0 small">Los consejos de gastronomía me sirvieron un montón durante mi viaje. Gracias a las recomendaciones, pude descubrir lugares increíbles que probablemente no habría encontrado por mi cuenta. Probé platos típicos, conocí sabores nuevos y viví experiencias auténticas que hicieron que el recorrido fuera mucho más enriquecedor. Sin duda, la parte gastronómica terminó siendo uno de los puntos más destacados de todo el turismo que realicé.</p>
+                            </div>
+                        </div>                         
+                        <div class="p-2 rounded shadow-sm d-flex align-items-start border bg-light post comment-card">
+                            <span id="icon" class="sprite icon-us me-2 flex-shrink-0"></span>
+                            <div>
+                                <div class="fw-bold">Diego Martínez</div>
+                                <div class="text-muted small mb-1">Hace 2 horas</div>
+                                <p class="mb-0 small">Espero que suban mas recetas y tips de bienestar según la región.</p>
+                            </div>
+                        </div>                    
+                        <div class="p-2 rounded shadow-sm d-flex align-items-start border bg-light post comment-card">
+                            <span id="icon" class="sprite icon-us me-2 flex-shrink-0"></span>
+                            <div>
+                                <div class="fw-bold">Usuario Anónimo</div>
+                                <div class="text-muted small mb-1">Hace 2 horas</div>
+                                <p class="mb-0 small">Excelente artículo sobre la importancia de elegir el seguro de viaje adecuado. Me salvó de un gran problema durante mi último viaje a Europa. Recomiendo a todos los lectores que no subestimen este aspecto antes de partir.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 rounded shadow-sm d-flex align-items-start border bg-light post comment-card">
+                            <span id="icon" class="sprite icon-us me-2 flex-shrink-0"></span>
+                            <div>
+                                <div class="fw-bold">Usuario Anónimo</div>
+                                <div class="text-muted small mb-1">Hace 3 horas</div>
+                                <p class="mb-0 small">Los consejos para viajar con niños son geniales. Mi familia y yo aplicamos varias de estas ideas en nuestro viaje a Disney y todo salió perfecto. Más contenido familiar, por favor.</p>
+                            </div>
+                        </div>                    
+                        <div class="p-2 rounded shadow-sm d-flex align-items-start border bg-light post comment-card">
+                            <span id="icon" class="sprite icon-us me-2 flex-shrink-0"></span>
+                            <div>
+                                <div class="fw-bold">Lucía Herrera</div>
+                                <div class="text-muted small mb-1">Hace 18 horas</div>
+                                <p class="mb-0 small">Me encantó la sección sobre turismo sostenible. Es crucial que todos los viajeros contribuyamos a preservar los destinos que visitamos. ¿Podrían incluir más guías sobre ecoturismo?</p>
+                            </div>
+                        </div>
+                        <div class="p-2 rounded shadow-sm d-flex align-items-start border bg-light post comment-card">
+                            <span id="icon" class="sprite icon-us me-2 flex-shrink-0"></span>
+                            <div>
+                                <div class="fw-bold">Daniela Suárez</div>
+                                <div class="text-muted small mb-1">Hace 1 día</div>
+                                <p class="mb-0 small">Las recomendaciones de apps para viajar solo fueron realmente muy útiles durante todo mi recorrido. Gracias a ellas, pude orientarme con facilidad en ciudades desconocidas, planificar mejor mis trayectos y resolver situaciones cotidianas sin complicaciones. Además, algunas de estas aplicaciones me permitieron conectar con otros viajeros, compartir experiencias y hasta descubrir actividades que no tenía previstas.<br>Viajar en solitario puede ser un desafío, pero contar con estas herramientas hizo que la experiencia fuera mucho más segura, dinámica y enriquecedora. Sin duda, son un recurso indispensable para cualquier aventurero que decida explorar el mundo por su cuenta.</p>
+                            </div>
+                        </div>                               
+                    </div>
                 </div>
             </div>
         </section>
@@ -172,13 +302,20 @@
 
         if (localStorage.getItem('dark-mode') === 'true') {
             document.body.classList.add('dark-mode');
-            icon.textContent = '☀️';
+            icon.classList.remove('icon-moon');
+            icon.classList.add('icon-sun');
         }
 
         toggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const dark = document.body.classList.contains('dark-mode');
-            icon.textContent = dark ? '☀️' : '🌙';
+            if (dark) {
+                icon.classList.remove('icon-moon');
+                icon.classList.add('icon-sun');
+            } else {
+                icon.classList.remove('icon-sun');
+                icon.classList.add('icon-moon');
+            }
             localStorage.setItem('dark-mode', dark);
         });
     </script>
