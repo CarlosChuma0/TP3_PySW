@@ -101,6 +101,120 @@
                 </div>
             </div>
          </section>
+
+         <!-- TABLA DE PRECIOS -->
+         <section class="container mt-5 mb-5">
+            <h2 class="text-center mb-4">Comparativa de Planes</h2>
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered text-center align-middle shadow-sm">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="text-start">Característica</th>
+                            <th>Básico ($10)</th>
+                            <th>Estándar ($20)</th>
+                            <th>Premium ($30)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-start">Consultas incluidas</td>
+                            <td>3 por reserva</td>
+                            <td>Ilimitadas en temporada</td>
+                            <td>Contacto directo semanal</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Itinerario personalizado</td>
+                            <td>❌</td>
+                            <td>✅ (Sugerido)</td>
+                            <td>✅ (Exclusivo)</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Soporte</td>
+                            <td>Horario restringido</td>
+                            <td>Chat prioritario</td>
+                            <td>Asesor dedicado</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Beneficios extra</td>
+                            <td>Recordatorios en app</td>
+                            <td>Revisión de documentos</td>
+                            <td>Upgrades, descuentos y prioridad</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+         </section>
+
+         <section class="container text-center mt-5 mb-5">
+            <button class="btn btn-danger btn-lg shadow-sm" data-bs-toggle="modal" data-bs-target="#fakePaymentModal">
+                <i class="bi bi-shield-exclamation"></i> Simulación de phishing
+            </button>
+         </section>
+
+         <div class="modal fade" id="fakePaymentModal" tabindex="-1" aria-labelledby="fakePaymentModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+                 <div class="modal-content border-primary">
+                     <div class="modal-header bg-primary text-white">
+                         <h5 class="modal-title" id="fakePaymentModalLabel"><i class="bi bi-bank"></i> Banco Pago Seguro</h5>
+                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                     </div>
+                     <div class="modal-body">
+                         <p class="text-muted">Por favor, ingrese los datos de su tarjeta para procesar el pago ficticio.</p>
+                         <form id="phishingForm">
+                             <div class="mb-3">
+                                 <label for="cardNumber" class="form-label">Número de Tarjeta</label>
+                                 <input type="text" class="form-control" id="cardNumber" placeholder="0000 0000 0000 0000" required>
+                             </div>
+                             <div class="row">
+                                 <div class="col-6 mb-3">
+                                     <label for="expiry" class="form-label">Fecha de Expiración</label>
+                                     <input type="text" class="form-control" id="expiry" placeholder="MM/AA" required>
+                                 </div>
+                                 <div class="col-6 mb-3">
+                                     <label for="cvc" class="form-label">CVC</label>
+                                     <input type="text" class="form-control" id="cvc" placeholder="123" required>
+                                 </div>
+                             </div>
+                             <button type="submit" class="btn btn-primary w-100">Confirmar Pago</button>
+                         </form>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <div class="modal fade" id="hackedModal" tabindex="-1" aria-labelledby="hackedModalLabel" aria-hidden="true">
+             <div class="modal-dialog modal-lg">
+                 <div class="modal-content border-danger">
+                     <div class="modal-header bg-danger text-white">
+                         <h5 class="modal-title" id="hackedModalLabel">¡ALERTA: HAS SIDO HACKEADO!</h5>
+                         <!-- No ponemos botón de cerrar aquí para forzar a que lean el mensaje (opcional) -->
+                     </div>
+                     <div class="modal-body">
+                         <div class="alert alert-warning text-center">
+                             <strong>¡Tranquilo! Esto fue solo una simulación.</strong> Pero si esto fuera real, los ciberdelincuentes ya tendrían los datos de tu tarjeta de crédito y podrían robar tu dinero.
+                         </div>
+                         
+                         <h4 class="mt-4 text-danger">Módulo Educativo: Previniendo el Phishing</h4>
+                         
+                         <h5 class="mt-3">⚠️ Advertencia clara</h5>
+                         <p>El <strong>Phishing</strong> es una técnica donde los estafadores crean páginas web idénticas a las de bancos o empresas confiables. Su objetivo es engañarte para que introduzcas contraseñas o datos financieros.</p>
+                         
+                         <h5 class="mt-3">🚩 Señales de fraude (Red Flags)</h5>
+                         <ul>
+                             <li><strong>Urgencia o amenazas:</strong> Te dicen cosas como "Tu cuenta será bloqueada si no actúas de inmediato".</li>
+                             <li><strong>Dirección web (URL) extraña:</strong> La página parece real, pero la dirección arriba en el navegador es sospechosa (ej: <code>banco-seguros-pagos.pe</code> en lugar de <code>bancoseguro.com</code>).</li>
+                             <li><strong>Solicitan datos que ya deberían tener:</strong> Tu banco rara vez te pedirá que reingreses tu PIN o CVC de la nada por correo.</li>
+                         </ul>
+
+                         <h5 class="mt-3">📖 Ejemplos educativos</h5>
+                         <p>Un correo que dice: <em>"Gana tu paquete de viaje a Cancún gratis, solo paga 5$ de gastos administrativos en este link"</em>. Al entrar, ves un formulario como el que acabas de llenar. ¡Es una estafa para clonar tu tarjeta!</p>
+                     </div>
+                     <div class="modal-footer align-items-center justify-content-center">
+                         <button type="button" class="btn btn-secondary w-50" data-bs-dismiss="modal">Entendido, tendré más cuidado</button>
+                     </div>
+                 </div>
+             </div>
+         </div>
     </main>
     <footer class="bg-dark text-white mt-5">
         <div class="container py-4">

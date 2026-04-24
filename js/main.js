@@ -160,3 +160,28 @@ $(document).ready(function () {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const phishingForm = document.getElementById('phishingForm');
+    
+    if (phishingForm) {
+        phishingForm.addEventListener('submit', (e) => {
+
+            e.preventDefault(); 
+            
+
+            phishingForm.reset();
+            
+
+            const fakePaymentModalElement = document.getElementById('fakePaymentModal');
+            const fakePaymentModal = bootstrap.Modal.getInstance(fakePaymentModalElement);
+            fakePaymentModal.hide();
+            
+            const hackedModalElement = document.getElementById('hackedModal');
+            let hackedModal = bootstrap.Modal.getInstance(hackedModalElement);
+            if (!hackedModal) {
+                hackedModal = new bootstrap.Modal(hackedModalElement);
+            }
+            hackedModal.show();
+        });
+    }
+});
