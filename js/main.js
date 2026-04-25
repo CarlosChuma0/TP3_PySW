@@ -110,12 +110,9 @@ $(document).ready(function () {
         $(this).toggleClass("flipped");
     });
 
-    // Evitar que el clic en la valoración voltee la card de vuelta
     $(".rating-interactivo").click(function (e) {
         e.stopPropagation();
     });
-
-    // Lógica para las estrellas (Hover y Click)
 
     // Efecto Hover
     $(".rating-interactivo .star").hover(
@@ -124,10 +121,8 @@ $(document).ready(function () {
             let value = $(this).data("value");
             let $parent = $(this).parent();
 
-            // Limpiar hovers
             $parent.find(".star").removeClass("hover");
 
-            // Colorear hasta la estrella actual
             $parent.find(".star").each(function () {
                 if ($(this).data("value") <= value) {
                     $(this).addClass("hover");
@@ -136,7 +131,6 @@ $(document).ready(function () {
         },
         // mouse out
         function () {
-            // Al quitar el mouse, limpiar los hovers
             $(this).parent().find(".star").removeClass("hover");
         }
     );
@@ -146,13 +140,10 @@ $(document).ready(function () {
         let value = $(this).data("value");
         let $parent = $(this).parent();
 
-        // Guardar el nuevo valor en el atributo data-rating
         $parent.attr("data-rating", value);
 
-        // Quitar la clase active de todas
         $parent.find(".star").removeClass("active");
 
-        // Asignar active hasta la estrella clickeada
         $parent.find(".star").each(function () {
             if ($(this).data("value") <= value) {
                 $(this).addClass("active");
@@ -237,14 +228,21 @@ $(document).ready(function () {
     });
 
     posts.forEach(post => observer.observe(post));
-    // Formulario - Validación en tiempo real
+
+    // Formulario 
     $(document).ready(function () {
 
-        // --- Funciones de validación ---
+        function sanitizar(texto) {
+            return texto
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
 
         function validarNombre() {
-            let valor = $("#nombre").val().trim();
-            // Solo letras (incluye acentos y ñ) y espacios, mínimo 3 caracteres
+            let valor = sanitizar($("#nombre").val().trim());
             let regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/;
             let esValido = regex.test(valor);
 
@@ -253,8 +251,7 @@ $(document).ready(function () {
         }
 
         function validarEmail() {
-            let valor = $("#email").val().trim();
-            // Regex estándar para email
+            let valor = sanitizar($("#email").val().trim());
             let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             let esValido = regex.test(valor);
 
@@ -264,7 +261,6 @@ $(document).ready(function () {
 
         function validarMotivo() {
             let valor = $("#motivo").val();
-            // val() retorna null si no hay opción seleccionada, o "" si el value es vacío
             let esValido = valor !== null && valor !== "";
 
             aplicarEstado($("#motivo"), esValido);
@@ -272,14 +268,12 @@ $(document).ready(function () {
         }
 
         function validarMensaje() {
-            let valor = $("#mensaje").val().trim();
+            let valor = sanitizar($("#mensaje").val().trim());
             let esValido = valor.length >= 10;
 
             aplicarEstado($("#mensaje"), esValido);
             return esValido;
         }
-
-        // --- Función auxiliar: aplica clases Bootstrap is-valid / is-invalid ---
 
         function aplicarEstado($campo, esValido) {
             if (esValido) {
@@ -289,13 +283,11 @@ $(document).ready(function () {
             }
         }
 
-        // --- Verificar si todo el formulario es válido para habilitar el botón ---
-
         function verificarFormulario() {
-            let nombreOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/.test($("#nombre").val().trim());
-            let emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("#email").val().trim());
+            let nombreOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/.test(sanitizar($("#nombre").val().trim()));
+            let emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(sanitizar($("#email").val().trim()));
             let motivoOk = $("#motivo").val() !== null && $("#motivo").val() !== "";
-            let mensajeOk = $("#mensaje").val().trim().length >= 10;
+            let mensajeOk = sanitizar($("#mensaje").val().trim()).length >= 10;
 
             if (nombreOk && emailOk && motivoOk && mensajeOk) {
                 $(".boton-enviar").removeClass("disabled").css({
@@ -312,32 +304,51 @@ $(document).ready(function () {
 
         // --- Binding de eventos ---
 
-        // Validar nombre mientras escribe
         $("#nombre").on("input", function () {
             validarNombre();
             verificarFormulario();
         });
 
-        // Validar email mientras escribe
         $("#email").on("input", function () {
             validarEmail();
             verificarFormulario();
         });
 
-        // Validar select al cambiar opción (select no dispara 'input')
         $("#motivo").on("change", function () {
             validarMotivo();
             verificarFormulario();
         });
-
-        // Validar mensaje mientras escribe
         $("#mensaje").on("input", function () {
             validarMensaje();
             verificarFormulario();
         });
 
-        // Estado inicial: botón deshabilitado
         verificarFormulario();
 
+        // --- Lógica del botón Enviar: spinner + modal ---
+
+        $("#btnEnviar").click(function () {
+            $(this).prop("disabled", true);
+
+            $("#spinnerOverlay").fadeIn(300);
+
+            setTimeout(function () {
+                $("#spinnerOverlay").fadeOut(300, function () {
+                    $("#modalConfirmacion").fadeIn(300);
+                });
+            }, 3000);
+        });
+
+        $("#btnCerrarModal").click(function () {
+            $("#modalConfirmacion").fadeOut(300);
+
+            $(".formulario").trigger("reset");
+
+            $(".formulario .form-control, .formulario .form-select")
+                .removeClass("is-valid is-invalid");
+
+            $("#btnEnviar").prop("disabled", false);
+            verificarFormulario();
+        });
     });
 });

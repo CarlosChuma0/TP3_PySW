@@ -91,19 +91,24 @@
                             <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
                             <div class="invalid-feedback">El mensaje debe tener al menos 10 caracteres</div>
                         </div>
-                        <!-- CHECK PARA SIMULAR UN BOTON DE ENVIO: ya que no podemos enviar el formulario, lo simulamos con un check de cuando se aprieta el boton, y cuando se confirma el envio -->
-                        <input type="checkbox" id="enviando" hidden>
-                        <label for="enviando" class="boton-enviar btn btn-success w-100" role="button">Enviar</label>
-                        <!-- SPINNER: el spinner al enviar el formulario -->
-                        <div class="spinner-overlay">
-                            <div class="spinner"></div>
+                        
+                        <!-- BOTON DE ENVIO -->
+                        <button type="button" class="boton-enviar btn btn-success w-100" id="btnEnviar">Enviar</button>
+                        <!-- SPINNER: overlay con spinner-border de Bootstrap -->
+                        <div class="spinner-overlay" id="spinnerOverlay" style="display: none;">
+                            <div class="text-center">
+                                <div class="spinner-border text-success" role="status">
+                                    <span class="visually-hidden">Enviando...</span>
+                                </div>
+                                <p class="mt-2 fw-bold">Enviando mensaje...</p>
+                            </div>
                         </div>
                         <!-- MODAL DE CONFIRMACION: modal para indicar que se envio el formulario -->
-                        <div class="modal-confirmacion">
+                        <div class="modal-confirmacion" id="modalConfirmacion" style="display: none;">
                             <div class="modal-contenido">
                                 <h3>Gracias por contactarnos!</h3>
                                 <p>Su mensaje fue enviado correctamente</p>
-                                <label for="enviando" class="boton-enviar">Cerrar</label>
+                                <button type="button" class="boton-enviar btn btn-success" id="btnCerrarModal">Cerrar</button>
                             </div>
                         </div>
                     </form>
