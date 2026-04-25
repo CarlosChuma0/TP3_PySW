@@ -162,20 +162,20 @@ $(document).ready(function () {
 });
 document.addEventListener('DOMContentLoaded', () => {
     const phishingForm = document.getElementById('phishingForm');
-    
+
     if (phishingForm) {
         phishingForm.addEventListener('submit', (e) => {
 
-            e.preventDefault(); 
-            
+            e.preventDefault();
+
 
             phishingForm.reset();
-            
+
 
             const fakePaymentModalElement = document.getElementById('fakePaymentModal');
             const fakePaymentModal = bootstrap.Modal.getInstance(fakePaymentModalElement);
             fakePaymentModal.hide();
-            
+
             const hackedModalElement = document.getElementById('hackedModal');
             let hackedModal = bootstrap.Modal.getInstance(hackedModalElement);
             if (!hackedModal) {
@@ -237,5 +237,107 @@ $(document).ready(function () {
     });
 
     posts.forEach(post => observer.observe(post));
+    // Formulario - Validación en tiempo real
+    $(document).ready(function () {
 
+        // --- Funciones de validación ---
+
+        function validarNombre() {
+            let valor = $("#nombre").val().trim();
+            // Solo letras (incluye acentos y ñ) y espacios, mínimo 3 caracteres
+            let regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/;
+            let esValido = regex.test(valor);
+
+            aplicarEstado($("#nombre"), esValido);
+            return esValido;
+        }
+
+        function validarEmail() {
+            let valor = $("#email").val().trim();
+            // Regex estándar para email
+            let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let esValido = regex.test(valor);
+
+            aplicarEstado($("#email"), esValido);
+            return esValido;
+        }
+
+        function validarMotivo() {
+            let valor = $("#motivo").val();
+            // val() retorna null si no hay opción seleccionada, o "" si el value es vacío
+            let esValido = valor !== null && valor !== "";
+
+            aplicarEstado($("#motivo"), esValido);
+            return esValido;
+        }
+
+        function validarMensaje() {
+            let valor = $("#mensaje").val().trim();
+            let esValido = valor.length >= 10;
+
+            aplicarEstado($("#mensaje"), esValido);
+            return esValido;
+        }
+
+        // --- Función auxiliar: aplica clases Bootstrap is-valid / is-invalid ---
+
+        function aplicarEstado($campo, esValido) {
+            if (esValido) {
+                $campo.removeClass("is-invalid").addClass("is-valid");
+            } else {
+                $campo.removeClass("is-valid").addClass("is-invalid");
+            }
+        }
+
+        // --- Verificar si todo el formulario es válido para habilitar el botón ---
+
+        function verificarFormulario() {
+            let nombreOk = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/.test($("#nombre").val().trim());
+            let emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("#email").val().trim());
+            let motivoOk = $("#motivo").val() !== null && $("#motivo").val() !== "";
+            let mensajeOk = $("#mensaje").val().trim().length >= 10;
+
+            if (nombreOk && emailOk && motivoOk && mensajeOk) {
+                $(".boton-enviar").removeClass("disabled").css({
+                    "opacity": "1",
+                    "pointer-events": "auto"
+                });
+            } else {
+                $(".boton-enviar").addClass("disabled").css({
+                    "opacity": "0.5",
+                    "pointer-events": "none"
+                });
+            }
+        }
+
+        // --- Binding de eventos ---
+
+        // Validar nombre mientras escribe
+        $("#nombre").on("input", function () {
+            validarNombre();
+            verificarFormulario();
+        });
+
+        // Validar email mientras escribe
+        $("#email").on("input", function () {
+            validarEmail();
+            verificarFormulario();
+        });
+
+        // Validar select al cambiar opción (select no dispara 'input')
+        $("#motivo").on("change", function () {
+            validarMotivo();
+            verificarFormulario();
+        });
+
+        // Validar mensaje mientras escribe
+        $("#mensaje").on("input", function () {
+            validarMensaje();
+            verificarFormulario();
+        });
+
+        // Estado inicial: botón deshabilitado
+        verificarFormulario();
+
+    });
 });

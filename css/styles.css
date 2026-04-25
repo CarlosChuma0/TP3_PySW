@@ -159,7 +159,7 @@ footer h3 {
     background-position: 0 0;
 }
 
-.icon-ig{
+.icon-ig {
     background-position: -256px 0;
 }
 
@@ -493,11 +493,7 @@ footer h3 {
     transition: border-color 0.3s;
 }
 
-.formulario-contacto input:valid,
-.formulario-contacto textarea:valid,
-.formulario-contacto select:valid {
-    border-color: #2ecc71;
-}
+
 
 .boton-enviar {
     background: #00c896;
@@ -515,10 +511,7 @@ footer h3 {
     background: #009f76;
 }
 
-.formulario-contacto:has(:invalid) .boton-enviar {
-    opacity: 0.5;
-    pointer-events: none;
-}
+
 
 /**********SPINNER DE CARGA**********/
 .spinner-overlay {
@@ -740,7 +733,7 @@ footer h3 {
     transform: translateY(30px);
     transition: opacity 0.1s linear, transform 0.1s linear;
     will-change: opacity, transform;
-    backface-visibility: hidden; 
+    backface-visibility: hidden;
 }
 
 .post.visible {
@@ -812,7 +805,7 @@ body.dark-mode #darkModeToggle .sprite {
     filter: invert(1);
 }
 
-body.dark-mode .comment-card .sprite{
+body.dark-mode .comment-card .sprite {
     filter: invert(1);
 }
 
@@ -825,7 +818,7 @@ body.dark-mode .card h3 {
 }
 
 body.dark-mode .card p,
-body.dark-mode .comment p{
+body.dark-mode .comment p {
     color: #aaaaaa;
 }
 
@@ -1026,4 +1019,48 @@ body.dark-mode #semestral:checked~.toggle-botones label[for="semestral"],
 body.dark-mode #anual:checked~.toggle-botones label[for="anual"] {
     background: #00c896;
     color: white;
+}
+
+body.dark-mode .blog {
+    background: #1e1e1e;
+    color: white;
+}
+
+body.dark-mode .blog h2 {
+    color: white;
+}
+
+body.dark-mode .blog p {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode .tags label {
+    background: #333;
+    color: white;
+}
+
+body.dark-mode input#todos:checked~.tags label[for="todos"],
+body.dark-mode input#nutricion:checked~.tags label[for="nutricion"],
+body.dark-mode input#entrenamiento:checked~.tags label[for="entrenamiento"],
+body.dark-mode input#bienestar:checked~.tags label[for="bienestar"] {
+    background: #00c896;
+    color: white;
+}
+
+body.dark-mode .post {
+    background: #2a2a2a;
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .comentario p {
+    color: white;
+}
+
+body.dark-mode .valid-feedback {
+    color: #2ecc71;
+}
+
+body.dark-mode .invalid-feedback {
+    color: #e74c3c;
 }
