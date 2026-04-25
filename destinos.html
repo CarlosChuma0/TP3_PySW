@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
 
-                <a class="navbar-brand" href="index.html">Turismo</a>
+                <a class="navbar-brand" href="index.html"><span class="sprite icon-airplane"></span>Turismo</a>
 
                 <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -58,7 +58,7 @@
             </div>
         </nav>
         <button id="darkModeToggle" aria-label="Toggle dark mode">
-            <span id="icon">🌙</span>
+            <span id="icon" class="sprite icon-moon"></span>
         </button>
     </header>
     <main class="contenido-principal">
@@ -336,10 +336,22 @@
                     <div class="redes">
                         <h3>Seguinos</h3>
                         <div class="d-flex flex-column gap-2">
-                            <a href="#" class="text-white"><i class="bi bi-facebook"></i> Facebook</a>
-                            <a href="#" class="text-white"><i class="bi bi-instagram"></i> Instagram</a>
-                            <a href="#" class="text-white"><i class="bi bi-youtube"></i> YouTube</a>
-                            <a href="#" class="text-white"><i class="bi bi-x"></i> X</a>
+                            <a href="#" target="_blank" class="d-flex align-items-center gap-2">
+                                <span class="sprite icon-fb"></span>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" target="_blank" class="d-flex align-items-center gap-2">
+                                <span class="sprite icon-ig"></span>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" target="_blank" class="d-flex align-items-center gap-2">
+                                <span class="sprite icon-yt"></span>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="#" target="_blank" class="d-flex align-items-center gap-2">
+                                <span class="sprite icon-x"></span>
+                                <span>X</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -365,13 +377,20 @@
 
         if (localStorage.getItem('dark-mode') === 'true') {
             document.body.classList.add('dark-mode');
-            icon.textContent = '☀️';
+            icon.classList.remove('icon-moon');
+            icon.classList.add('icon-sun');
         }
 
         toggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const dark = document.body.classList.contains('dark-mode');
-            icon.textContent = dark ? '☀️' : '🌙';
+            if (dark) {
+                icon.classList.remove('icon-moon');
+                icon.classList.add('icon-sun');
+            } else {
+                icon.classList.remove('icon-sun');
+                icon.classList.add('icon-moon');
+            }
             localStorage.setItem('dark-mode', dark);
         });
     </script>

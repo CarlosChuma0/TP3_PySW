@@ -155,32 +155,42 @@ footer h3 {
     transform-origin: center;
 }
 
-.icon-us {
+.icon-fb {
     background-position: 0 0;
 }
 
-.icon-yt {
+.icon-ig{
+    background-position: -256px 0;
+}
+
+.icon-airplane {
     background-position: -32px 0;
+    filter: invert(1);
 }
 
-.icon-x {
+.icon-bank {
     background-position: -64px 0;
+    filter: invert(1);
 }
 
-.icon-sun {
+.icon-us {
     background-position: -96px 0;
 }
 
-.icon-moon {
+.icon-yt {
     background-position: -128px 0;
 }
 
-.icon-ig {
+.icon-sun {
     background-position: -160px 0;
 }
 
-.icon-fb {
+.icon-moon {
     background-position: -192px 0;
+}
+
+.icon-x {
+    background-position: -224px 0;
 }
 
 /**********FILTRADO Y TARJETAS**********/
@@ -797,7 +807,7 @@ body.dark-mode .hero-text {
 }
 
 body.dark-mode .clases-destacadas {
-    background: #1a1a1a;
+    background: #111111;
 }
 
 body.dark-mode .card,
@@ -838,7 +848,7 @@ body.dark-mode .contador {
 }
 
 body.dark-mode .testimonios {
-    background: #1a1a1a;
+    background: #111111;
     border-color: #333;
 }
 
@@ -875,7 +885,7 @@ body.dark-mode .redes a:hover {
 }
 
 body.dark-mode .filtro-clases {
-    background: #1e1e1e;
+    background: #111111;
     color: white;
 }
 
@@ -905,7 +915,7 @@ body.dark-mode .tarjeta .overlay {
 }
 
 body.dark-mode .galeria-masonry {
-    background: #1e1e1e;
+    background: #111111;
     color: white;
 }
 
@@ -925,7 +935,7 @@ body.dark-mode .table-responsive td {
 }
 
 body.dark-mode .entrenadores {
-    background: #1e1e1e;
+    background: #111111;
     color: white;
 }
 
