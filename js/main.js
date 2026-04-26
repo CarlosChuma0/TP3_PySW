@@ -352,3 +352,44 @@ $(document).ready(function () {
         });
     });
 });
+
+//Sanitizacion Footer
+$(document).ready(function () {
+
+    function sanitizar(texto) {
+        return texto
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    function validarEmail(email) {
+        let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return regex.test(email);
+    }
+
+    $("#formNewsLetter").on("submit", function (e) {
+        e.preventDefault();
+
+        let $form = $(this);
+        let $input = $form.find("#newsletterEmail");
+
+        let email = $input.val().trim();
+
+        if (validarEmail(email)) {
+            let limpio = sanitizar(email);
+
+            $input.removeClass("is-invalid").addClass("is-valid");
+            setTimeout(() => {
+                $form.trigger("reset");
+                $input.removeClass("is-valid");
+            }, 4000);
+
+        } else {
+            $input.removeClass("is-valid").addClass("is-invalid");
+        }
+    });
+
+});

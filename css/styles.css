@@ -749,6 +749,9 @@ body.dark-mode .hero-text {
 body.dark-mode .clases-destacadas {
     background: #111111;
 }
+body.dark-mode .clases-destacadas h2{
+    color: #00ffaab2;
+}
 
 body.dark-mode .card,
 body.dark-mode .comment-card {

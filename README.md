@@ -1,40 +1,40 @@
 # Sitio web de turismo — Programación y Servicios Web (TP 2026)
 
-Sitio ficticio para una operadora o agencia de viajes, desarrollado con **HTML** y **CSS**, y **JavaScript** mínimo (modo oscuro y scroll reveal en el blog). El enunciado del **TP 2026 (turismo)** no pide la barra de habilidades animada de ejemplos anteriores; este proyecto mantiene además el **toggle mensual / semestral / anual** de precios solo con CSS (como en el TP de gimnasio), por si lo pedís en otra instancia o querés mostrar esa técnica.
-
+Sitio ficticio para una operadora o agencia de viajes, desarrollado con **HTML** y **CSS**, y **JavaScript** mínimo (modo oscuro y scroll reveal en el blog).
 ---
 
 ## Estructura del sitio
 
-- **Header:** En todas las páginas, navegación entre secciones mediante **mega menú** desplegable (solo CSS).
-- **Footer:** Newsletter, enlaces a redes sociales y **mapa embebido** (Facultad de Ingeniería, UNJu).
-- **Home (`index.html`):** Hero con **video de fondo en bucle** y **texto superpuesto** con animación; bloque de **destinos destacados** (tarjetas con hover); **contador** con animación al cargar; **testimonios** en carrusel CSS.
-- **Destinos (`destinos.html`):** Tarjetas informativas **sin imágenes**, **filtro por categoría** solo con CSS (Patrimonio, Naturaleza, Aventura, Playa), **galería masonry** con **lightbox**, **tabla de horarios** semanal.
-- **Agencias (`agencias.html`):** Tarjetas con **efecto flip**, foto y datos del asesor en el dorso, **rating con estrellas** animado en CSS.
-- **Contacto (`formulario.html`):** Formulario con validación, **spinner** al enviar y **modal** de confirmación (simulación con CSS/checkbox).
+- **Header:** En todas las páginas, navegación entre secciones mediante **mega menú** desplegablem responsividad con bootstrap.
+- **Footer:** Newsletter on sanitizacion en el enviado, enlaces a redes sociales y **mapa embebido** (Facultad de Ingeniería, UNJu).
+- **Home (`index.html`):** Hero con **video de fondo en bucle** y **texto superpuesto** con animación; bloque de **destinos destacados** (tarjetas con hover); **contador** con animación al cargar utilizando Jquery; **testimonios** en carrusel CSS con Jquery.
+- **Destinos (`destinos.html`):** Tarjetas informativas **sin imágenes**, **filtro por categoría** dinamico con Jquery (Patrimonio, Naturaleza, Aventura, Playa), **galería masonry** con **lightbox**, **tabla de precios** todos los elementos responsivos.
+- **Agencias (`agencias.html`):** Tarjetas responsivas con **efecto flip**, foto y datos del asesor en el dorso, **rating con estrellas** animado con Jquery.
+- **Contacto (`formulario.html`):** Formulario con validación, **spinner** al enviar y **modal** de confirmación con función de sanitización en envio de formualrios.
 - **Precios (`precios.html`):** Tres planes de paquetes con **toggle mensual / semestral / anual** (radios + CSS `attr()`), **tooltips** en los ítems y efecto hover en las tarjetas; el borde de los planes cambia según el período seleccionado.
-- **Blog (`blog.html`):** Artículos filtrables por categoría (solo CSS), **scroll reveal** con `IntersectionObserver`, sección de **comentarios** con avatares hechos en CSS.
+- **Modulo simulación Phsihing:** desarrollado en página Precios simulando una recoleccion real de datos bancarios ingresados a la página.
+- **Blog (`blog.html`):** Artículos filtrables por categoría usando Jquery, **scroll reveal** con `IntersectionObserver`, sección de **comentarios** con avatares usnado Sprites CSS.
 
 ### Archivos principales
 
-| Archivo        | Contenido principal                          |
-|----------------|-----------------------------------------------|
+| Archivo        | Contenido principal                             |
+|----------------|-------------------------------------------------|
 | `index.html`   | Inicio, hero, destacados, contador, testimonios |
-| `destinos.html`| Filtro, tarjetas, galería, horarios          |
-| `agencias.html`| Tarjetas flip y estrellas                    |
-| `formulario.html` | Contacto                                  |
-| `precios.html` | Planes y precios                             |
-| `blog.html`    | Posts, filtros, comentarios                  |
-| `css/styles.css` | Estilos globales, animaciones, modo oscuro |
+| `destinos.html`| Filtro, tarjetas, galería, precios              |
+| `agencias.html`| Tarjetas flip y estrellas                       |
+| `formulario.html` | Contacto                                     |
+| `precios.html` | Planes, precios y simulación de Phishing        |
+| `blog.html`    | Posts, filtros, comentarios                     |
+| `css/styles.css` | Estilos globales, animaciones, modo oscuro    |
 
 ---
 
 ## Decisiones de diseño
 
 - **Paleta cálida** (naranja, negro, blanco, acentos en verde/azul según secciones) para un sitio turístico claro y legible.
-- **Layout responsivo parcial** con Flexbox y Grid.
+- **Layout responsivo parcial** utlizando componentes bootstrap.
 - **Modo oscuro** con botón fijo abajo a la derecha, persistencia en `localStorage` (JavaScript + CSS).
-- **Animaciones y transiciones** con `@keyframes` y hover donde aporta claridad.
+- **Animaciones y transiciones** con `@keyframes` implementados mediante Jquerys dinamicamente y hover donde aporta claridad.
 - **Estructura HTML** ordenada (landmarks, secciones comentadas) para facilitar corrección y mantenimiento.
 
 ---
@@ -42,10 +42,10 @@ Sitio ficticio para una operadora o agencia de viajes, desarrollado con **HTML**
 ## Tecnologías
 
 - **HTML5**
-- **CSS3** (incluye filtros con radios ocultos, masonry, lightbox con `:target`, formulario simulado, carrusel de testimonios)
+- **CSS3** ( Galeria de destinosmasonry, lightbox con `:target`)
 - **JavaScript:** modo oscuro; scroll reveal en el blog
-- Opcional: **GitHub Pages** u otro hosting estático para la publicación
-
+- **Jquery:** Animaciones de reveal mediante scroll, filtros, contador y validaciones.
+-**Bootsrao.** Responsividad en los elementos de las páginas.
 ---
 
 ## Funcionalidades destacadas (checklist)
@@ -58,31 +58,31 @@ Sitio ficticio para una operadora o agencia de viajes, desarrollado con **HTML**
 **Página principal**  
 - Video en bucle de fondo + overlay de texto animado  
 - Tarjetas de destinos destacados con hover  
-- Contador animado al cargar (CSS)  
-- Carrusel de testimonios (CSS)  
+- Contador animado al cargar  
+- Carrusel de testimonios  
 
 **Destinos**  
-- Filtrado de tarjetas por categoría (solo CSS)  
+- Filtrado de tarjetas por categoría 
 - Galería masonry + lightbox  
-- Tabla de horarios responsiva  
+- Tabla de precios responsiva  
 
 **Agencias**  
-- Tarjetas con volteo 3D al hover  
-- Información en el reverso + estrellas valoradas con CSS  
+- Tarjetas con volteo 3D  
+- Información en el reverso + estrellas valoradas 
 
 **Contacto**  
-- Validación de campos; envío simulado  
-- Spinner y modal de confirmación  
+- Validación de campos en tiempo real;  
+- Spinner y modal de confirmación.
 
 **Precios**  
-- Tres niveles de plan con listas y tooltips  
-- Botones para alternar precio mensual, semestral y anual (solo CSS)  
-- Marco de las tarjetas de plan según el período activo  
+- Tres niveles de plan con listas y tooltips   
+- Marco de las tarjetas de plan según el período activo
+- Simulación de Phishing
 
 **Blog**  
-- Filtrado de posts por categoría (CSS)  
+- Filtrado de posts por categoría 
 - Scroll reveal al entrar en vista  
-- Comentarios con avatares en CSS  
+- Comentarios con avatares usnado sprites CSS  
 
 **Modo oscuro**  
 - Toggle en todas las páginas  
@@ -92,11 +92,11 @@ Sitio ficticio para una operadora o agencia de viajes, desarrollado con **HTML**
 
 ## Demo
 
-📍 [Ver el sitio en GitHub Pages](https://solizfernando.github.io/practico_html_css-2026) — actualizá la URL si usás otro usuario o repositorio.
+📍 [Ver el sitio en GitHub Pages](https://carloschuma0.github.io/TP3_PySW/)
 
 ---
 
 ## Autor
 
-Desarrollado por Chumacero Carlos y Soliz Fernando .
+Desarrollado por Chumacero Carlos y Soliz Fernando, Daniel Palermo, Adriel Troncoso .
 
